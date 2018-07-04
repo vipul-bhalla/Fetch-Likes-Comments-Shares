@@ -16,12 +16,12 @@ function onOpen() {
 //  var now = new Date();
 //  startTime = now.toLocaleTimeString();
 //  var ss = SpreadsheetApp.getActiveSpreadsheet();
-//  var viewSheet = ss.getSheetByName('Sheet_name1');
+//  var viewSheet = ss.getSheetByName('Sheet_name02');
 //  viewSheet.getRange('A3').setValue(startTime);
 //  Logger.log(startTime); 
   
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var viewSheet = ss.getSheetByName('Sheet_name1');
+  var viewSheet = ss.getSheetByName('Sheet_name02');
   viewSheet.getRange('A2').setValue(1);
 }
 
@@ -31,7 +31,7 @@ function logUrl() {
 //  var data = sheet.getDataRange().getValues();
   var urls=[];
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var viewSheet = ss.getSheetByName('Sheet_name2');
+  var viewSheet = ss.getSheetByName('Sheet_name01');
   var data = viewSheet.getDataRange().getValues();
   for (var i =1; i < data.length; i++) {
 //    Logger.log('Urls: ' + data[i][3]);
@@ -58,7 +58,7 @@ function promptForDate(urls) {
 // }
   
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var viewSheet = ss.getSheetByName('Sheet_name1');
+  var viewSheet = ss.getSheetByName('Sheet_name02');
   var data = viewSheet.getRange('B1').getValue();
 //  Logger.log('Token: ' + data);
   var token=data;
@@ -78,14 +78,14 @@ function getIds(accessToken, urls)
   var nows = new Date();
   startTime = nows.toLocaleTimeString();
   var sss = SpreadsheetApp.getActiveSpreadsheet();
-  var viewSheets = sss.getSheetByName('Sheet_name1');
+  var viewSheets = sss.getSheetByName('Sheet_name02');
   viewSheets.getRange('A3').setValue(startTime);
 //  Logger.log(startTime); 
   
   var json;
   var arr=[];
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var viewSheet = ss.getSheetByName('Sheet_name1');
+  var viewSheet = ss.getSheetByName('Sheet_name02');
   var history = viewSheet.getRange('A2').getValue();
 //  Logger.log(history);
 //  Logger.log(urls.length);
@@ -154,7 +154,7 @@ function getIds(accessToken, urls)
     var now = new Date();
     var currentTime = now.toLocaleTimeString();
     var s1 = SpreadsheetApp.getActiveSpreadsheet();
-    var viewSheet1 = s1.getSheetByName('Sheet_name1');
+    var viewSheet1 = s1.getSheetByName('Sheet_name02');
     var startTime = viewSheet1.getRange("A3").getValue();
     var diff = currentTime.split(":")[1] - startTime.split(":")[1];
     if(diff<0)
@@ -164,7 +164,7 @@ function getIds(accessToken, urls)
     if(diff>=4)
     {
       var ss = SpreadsheetApp.getActiveSpreadsheet();
-      var viewSheet = ss.getSheetByName('Sheet_name1');
+      var viewSheet = ss.getSheetByName('Sheet_name02');
       viewSheet.getRange('A2').setValue(j);
       break;
     }
@@ -199,7 +199,7 @@ function getCounts(page_id,postid,accessToken,index)
     arr=[x,y,z];
 //    Logger.log(arr);
     var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var viewSheet = ss.getSheetByName('Sheet_name2');
+    var viewSheet = ss.getSheetByName('Sheet_name01');
     //  var sheet=SpreadsheetApp.getActiveSheet();
     var posc='I'+index;
     var posr='J'+index;
